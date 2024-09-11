@@ -7,7 +7,7 @@ const Product = () => {
     
     useEffect(() => {
         async function fetchProductData() {
-            const response = await axios.get("https://dummyjson.com/products?limit=10")
+            const response = await axios.get("https://dummyjson.com/products")
             setProducts(response.data.products)
             console.log(products)
 
