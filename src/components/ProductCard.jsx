@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import RatingReview from './RatingReview';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({prod, index}) => {
     const [rating, setRating] = useState(0)
@@ -45,7 +46,7 @@ const ProductCard = ({prod, index}) => {
         </span>
 
         <div className='mt-5 flex gap-2'>
-            <button className='btn-primary'>View Details</button>
+        <Link to={ `/productdetail/${prod.id}`} className='btn-primary'>View Details</Link>
         </div>
     </div>
 </div>

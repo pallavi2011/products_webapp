@@ -15,7 +15,7 @@ const Product = () => {
         fetchProductData();
     },[])
   return (
-    <div className='h-screen p-10 bg-gray-100 flex md:flex md:flex-wrap items-center justify-center gap-4'>
+    <div className='h-screen p-10 bg-gray-100 flex flex-wrap md:flex md:flex-wrap items-center justify-center gap-4'>
         {products.map((prod, index) => {
             return (
                 <ProductCard prod={prod} index={index} key={index}/>
