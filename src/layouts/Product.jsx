@@ -4,9 +4,10 @@ import ProductCard from '../components/ProductCard';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
+    
     useEffect(() => {
         async function fetchProductData() {
-            const response = await axios.get("https://dummyjson.com/products")
+            const response = await axios.get("https://dummyjson.com/products?limit=10")
             setProducts(response.data.products)
             console.log(products)
 
@@ -14,10 +15,10 @@ const Product = () => {
         fetchProductData();
     },[])
   return (
-    <div className='h-screen bg-gray-100 flex items-center justify-center'>
+    <div className='h-screen p-10 bg-gray-100 flex md:flex md:flex-wrap items-center justify-center gap-4'>
         {products.map((prod, index) => {
             return (
-                <ProductCard/>
+                <ProductCard prod={prod} index={index} key={index}/>
             )
         })}
        
